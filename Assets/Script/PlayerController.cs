@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 right = new Vector2(0.2f,0.2f);
     private Vector2 left = new Vector2(-0.2f,0.2f);
 
-    public float distanceFromGround = 3.0f;
+    public float distanceFromGround = 2.0f;
 
     public LayerMask GroundLayer;
 
