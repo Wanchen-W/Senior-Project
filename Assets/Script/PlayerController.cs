@@ -6,12 +6,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
-    private float direction = 0f;
+    public float jumpPower = 10f;
+    private float directionX = 0f;
+    private float directionY = 0f;
     private Rigidbody2D player;
     private Animator playerAnimation;
     Vector2 movement;
     private Vector2 right = new Vector2(0.2f,0.2f);
     private Vector2 left = new Vector2(-0.2f,0.2f);
+
+    public float distanceFromGround = 2.0f;
+
+    public LayerMask GroundLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +29,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = Input.GetAxis("Horizontal");
-        if (direction > 0f )
+        directionX = Input.GetAxis("Horizontal");
+        directionY = Input.GetAxis("Vertical");
+
+        if (Input.GetButtonDown("Jump") && isOnGround()) {
+
+            Jump();
+
+        }
+
+        if (directionX > 0f )
         {
-            player.velocity = new Vector2 ( direction * speed, player.velocity.y);
+            player.velocity = new Vector2 ( directionX * speed, player.velocity.y);
             transform.localScale = right;
         }
-        else if (direction < 0f )
+        else if (directionX < 0f )
         {
-            player.velocity = new Vector2(direction * speed, player.velocity.y);
+            player.velocity = new Vector2(directionX * speed, player.velocity.y);
             transform.localScale = left;
         }
         else
@@ -41,8 +56,28 @@ public class PlayerController : MonoBehaviour
         playerAnimation.SetFloat("Speed",Mathf.Abs(player.velocity.x));
     }
 
+    void Jump() {
+
+        player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+
+    }
+
+    public bool isOnGround() {
+
+        RaycastHit2D check = Physics2D.Raycast(transform.position, Vector2.down, distanceFromGround, GroundLayer);
+
+        if (check.collider != null) {
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
     private void FixedUpdate()
     {
-        
+
     }
 }
