@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     private float directionY = 0f;
     private Rigidbody2D player;
     private Animator playerAnimation;
-    bool onGroundcheck;
-    private Vector2 right = new Vector2(0.2f, 0.2f);
-    private Vector2 left = new Vector2(-0.2f, 0.2f);
+    Vector2 movement;
+    private Vector2 right = new Vector2(0.2f,0.2f);
+    private Vector2 left = new Vector2(-0.2f,0.2f);
 
     public float distanceFromGround = 2.0f;
 
@@ -32,23 +32,19 @@ public class PlayerController : MonoBehaviour
     {
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
-        GetComponent<Animator>().SetBool("onGroundCheck", true);
-        if (Input.GetButtonDown("Jump") && isOnGround())
-        {
-            GetComponent<Animator>().SetBool("onGroundCheck", false);
+
+        if (Input.GetButtonDown("Jump") && isOnGround()) {
+
             Jump();
 
         }
-        if(!isOnGround())
+
+        if (directionX > 0f )
         {
-            GetComponent<Animator>().SetBool("onGroundCheck", false);
-        }
-        if (directionX > 0f)
-        {
-            player.velocity = new Vector2(directionX * speed, player.velocity.y);
+            player.velocity = new Vector2 ( directionX * speed, player.velocity.y);
             transform.localScale = right;
         }
-        else if (directionX < 0f)
+        else if (directionX < 0f )
         {
             player.velocity = new Vector2(directionX * speed, player.velocity.y);
             transform.localScale = left;
@@ -75,6 +71,26 @@ public class PlayerController : MonoBehaviour
 
         if (check.collider != null)
         {
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
+    void Jump() {
+
+        player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+
+    }
+
+    public bool isOnGround() {
+
+        RaycastHit2D check = Physics2D.Raycast(transform.position, Vector2.down, distanceFromGround, GroundLayer);
+
+        if (check.collider != null) {
 
             return true;
 
