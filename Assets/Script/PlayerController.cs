@@ -32,13 +32,16 @@ public class PlayerController : MonoBehaviour
     {
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
-
+        GetComponent<Animator>().SetBool("onGroundCheck", true);
         if (Input.GetButtonDown("Jump") && isOnGround()) {
-
+            GetComponent<Animator>().SetBool("onGroundCheck", false);
             Jump();
 
         }
-
+        if (!isOnGround())
+        {
+            GetComponent<Animator>().SetBool("onGroundCheck", false);
+        }
         if (directionX > 0f )
         {
             player.velocity = new Vector2 ( directionX * speed, player.velocity.y);
@@ -80,26 +83,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Jump() {
-
-        player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-
-    }
-
-    public bool isOnGround() {
-
-        RaycastHit2D check = Physics2D.Raycast(transform.position, Vector2.down, distanceFromGround, GroundLayer);
-
-        if (check.collider != null) {
-
-            return true;
-
-        }
-
-        return false;
-
-    }
-
+  
     private void FixedUpdate()
     {
 
