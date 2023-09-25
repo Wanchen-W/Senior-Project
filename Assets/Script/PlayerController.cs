@@ -84,6 +84,26 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void Jump() {
+
+        player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+
+    }
+
+    public bool isOnGround() {
+
+        RaycastHit2D check = Physics2D.Raycast(transform.position, Vector2.down, distanceFromGround, GroundLayer);
+
+        if (check.collider != null) {
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
     private void FixedUpdate()
     {
 
