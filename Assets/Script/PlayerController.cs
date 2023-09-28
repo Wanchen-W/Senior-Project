@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask GroundLayer;
 
+    bool jumping;
+    bool holdingJump;
+    float counterJump = -5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +36,22 @@ public class PlayerController : MonoBehaviour
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Jump") && isOnGround()) {
+        if (Input.GetButtonDown("Jump")) {
+            
+            holdingJump = true;
 
-            Jump();
+            if (isOnGround()) {
 
+                jumping = true;
+                Jump();
+
+            }
+
+        }
+
+        else if (Input.GetButtonUp("Jump")) {
+
+            holdingJump = false;
         }
 
         if (directionX > 0f )
@@ -58,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump() {
 
-        player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
 
     }
 
@@ -76,8 +92,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
+
+        if (jumping) {
+
+            if (!holdingJump && Vector2.Dot(player.velocity, Vector2.up) > 0) {
+
+                player.AddForce(Vector2.down * -counterJump * player.mass);
+
+            }
+
+        }
 
     }
 }
