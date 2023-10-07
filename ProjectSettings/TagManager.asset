@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Ground
@@ -43,4 +44,10 @@ TagManager:
     locked: 0
   - name: face
     uniqueID: 3668578255
+    locked: 0
+  - name: Background
+    uniqueID: 2988486345
+    locked: 0
+  - name: Ground
+    uniqueID: 834076791
     locked: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpPower = 10f;
     private float directionX = 0f;
     private float directionY = 0f;
+    private float speedCopy = 0f;
     private Rigidbody2D player;
     private Animator playerAnimation;
     Vector2 movement;
@@ -25,15 +27,20 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
         GetComponent<Animator>().SetBool("onGroundCheck", true);
+        GetComponent<Animator>().SetBool("attack", false);
+        speedCopy = speed;
     }
 
     // Update is called once per frame
     void Update()
     {
+ 
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
         GetComponent<Animator>().SetBool("onGroundCheck", true);
+        GetComponent<Animator>().SetBool("attack", false);
         if (Input.GetButtonDown("Jump") && isOnGround()) {
+            StartWalking();
             GetComponent<Animator>().SetBool("onGroundCheck", false);
             Jump();
 
@@ -42,21 +49,29 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("onGroundCheck", false);
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<Animator>().SetBool("attack", true);
+            StopWalking();
+        }
         if (directionX > 0f )
         {
+            StartWalking();
             player.velocity = new Vector2 ( directionX * speed, player.velocity.y);
             transform.localScale = right;
         }
         else if (directionX < 0f )
         {
+            StartWalking();
             player.velocity = new Vector2(directionX * speed, player.velocity.y);
             transform.localScale = left;
         }
         else
         {
+            StartWalking();
             player.velocity = new Vector2(0, player.velocity.y);
         }
-
+        playerAnimation.SetFloat("Jump",player.velocity.y);
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
     }
 
@@ -65,6 +80,15 @@ public class PlayerController : MonoBehaviour
 
         player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
 
+    }
+    void StartWalking()
+    {
+        speed = speedCopy;
+    }
+
+    void StopWalking()
+    {
+        speed = 0;
     }
 
     public bool isOnGround()
