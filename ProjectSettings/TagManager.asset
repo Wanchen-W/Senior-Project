@@ -51,3 +51,6 @@ TagManager:
   - name: Ground
     uniqueID: 834076791
     locked: 0
+  - name: player obj
+    uniqueID: 3655558607
+    locked: 0
