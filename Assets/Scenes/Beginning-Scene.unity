@@ -1042,7 +1042,7 @@ PrefabInstance:
     - target: {fileID: 3841076314186348366, guid: 43242a6fb0a21f242a6140001826b34b, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1159075517}
     - target: {fileID: 3841076314186348366, guid: 43242a6fb0a21f242a6140001826b34b, type: 3}
       propertyPath: distanceBetween
       value: 8
