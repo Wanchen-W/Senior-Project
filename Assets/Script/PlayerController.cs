@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask GroundLayer;
 
+    bool jumping;
+    bool holdingJump;
+    float counterJump = -5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +43,22 @@ public class PlayerController : MonoBehaviour
         directionY = Input.GetAxis("Vertical");
         GetComponent<Animator>().SetBool("onGroundCheck", true);
         GetComponent<Animator>().SetBool("attack", false);
-        if (Input.GetButtonDown("Jump") && isOnGround()) {
-            StartWalking();
-            GetComponent<Animator>().SetBool("onGroundCheck", false);
-            Jump();
 
+        if (Input.GetButtonDown("Jump")) {
+            
+            holdingJump = true;
+
+            if (isOnGround()) {
+               GetComponent<Animator>().SetBool("onGroundCheck", false);
+                jumping = true;
+                Jump();
+
+            }
+
+        }
+        else if (Input.GetButtonUp("Jump")) {
+
+            holdingJump = false;
         }
         if (!isOnGround())
         {
@@ -52,7 +67,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Animator>().SetBool("attack", true);
-            StopWalking();
         }
         if (directionX > 0f )
         {
@@ -78,7 +92,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
 
-        player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            player.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
 
     }
     void StartWalking()
@@ -107,9 +121,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
-  
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
+
+        if (jumping) {
+
+            if (!holdingJump && Vector2.Dot(player.velocity, Vector2.up) > 0) {
+
+                player.AddForce(Vector2.down * -counterJump * player.mass);
+
+            }
+
+        }
 
     }
 }
