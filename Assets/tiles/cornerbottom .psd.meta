@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 763b292ffdb76d146a2d3498404bd0a5
+guid: 6bd52263ad2da0843b2cdc510ca3483c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,160 +123,57 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corners_0
+      name: cornerbottom _0
       rect:
         serializedVersion: 2
-        x: 383
-        y: 1204
-        width: 128
-        height: 128
+        x: 156
+        y: 581
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -64, y: 48}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 50}
+      - - {x: 150, y: 256}
+        - {x: 150, y: 41}
+        - {x: -256, y: 40}
+        - {x: -256, y: -256}
+        - {x: 39, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
       tessellationDetail: 0
       bones: []
-      spriteID: 34defefb7cfce1e46aac322440ddbd72
-      internalID: -1638497718
+      spriteID: e9fcfca1a5fd26147a9b003d8321712d
+      internalID: 1154945847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corners_1
+      name: cornerbottom _1
       rect:
         serializedVersion: 2
-        x: 631
-        y: 1203
-        width: 128
-        height: 128
+        x: 1247
+        y: 180
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -64, y: 48}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 49}
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: -38, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 39}
+        - {x: -150, y: 41}
+        - {x: -150.76111, y: 254.23895}
       tessellationDetail: 0
       bones: []
-      spriteID: 4552e6445116e654a9e1315efc3230ae
-      internalID: -1927095276
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: corners_2
-      rect:
-        serializedVersion: 2
-        x: 385
-        y: 889
-        width: 128
-        height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d628e4ee8e02bf43a3ac1d7b3409b87
-      internalID: 956350599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: corners_3
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 940
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a741f944c38384f4bb89e3999f630434
-      internalID: 1077770448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: corners_4
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 290
-        width: 384
-        height: 384
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6951ece5889202f46a7e2ae064259516
-      internalID: -1791673314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: corners_5
-      rect:
-        serializedVersion: 2
-        x: 745
-        y: 593
-        width: 384
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -192, y: 50}
-        - {x: -192, y: -64}
-        - {x: 192, y: -64}
-        - {x: 192, y: 54}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3145735a280c369469bfd8272f59e65c
-      internalID: 597508937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: corners_6
-      rect:
-        serializedVersion: 2
-        x: 758
-        y: 305
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1e2d840d89909946a3a08141876e47c
-      internalID: 1610513556
+      spriteID: 1fc8e710835104649b33b3389eb04fe0
+      internalID: -2006583695
       vertices: []
       indices: 
       edges: []
@@ -292,13 +189,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      corners_0: -1638497718
-      corners_1: -1927095276
-      corners_2: 956350599
-      corners_3: 1077770448
-      corners_4: -1791673314
-      corners_5: 597508937
-      corners_6: 1610513556
+      cornerbottom _0: 1154945847
+      cornerbottom _1: -2006583695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

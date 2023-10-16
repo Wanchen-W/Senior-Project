@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,15 +126,19 @@ TextureImporter:
       name: Tile_Set_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2092
-        width: 875
-        height: 294
+        x: 115
+        y: 2146
+        width: 640
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -320, y: 50}
+        - {x: -319.7783, y: -64}
+        - {x: 320, y: -64}
+        - {x: 320, y: 52}
       tessellationDetail: 0
       bones: []
       spriteID: 5e614a3af5b8fdd46b63a0968bf57f4f
@@ -147,15 +151,22 @@ TextureImporter:
       name: Tile_Set_1
       rect:
         serializedVersion: 2
-        x: 1234
-        y: 2048
-        width: 358
-        height: 166
+        x: 1195
+        y: 1988
+        width: 336
+        height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 168, y: 56.5}
+        - {x: -168, y: 57.5}
+        - {x: -167.98204, y: -34.94186}
+        - {x: -96.92877, y: -65.395966}
+        - {x: 141.04326, y: -65.395966}
+        - {x: 168, y: 7.919465}
+        - {x: 168, y: 56.5}
       tessellationDetail: 0
       bones: []
       spriteID: 5b5e0ef26fd659d47abfafc373ed5657
@@ -168,15 +179,19 @@ TextureImporter:
       name: Tile_Set_2
       rect:
         serializedVersion: 2
-        x: 174
-        y: 1655
-        width: 864
-        height: 288
+        x: 98
+        y: 1717
+        width: 640
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -320, y: 49}
+        - {x: -319.86084, y: -64}
+        - {x: 320, y: -64}
+        - {x: 320, y: 50}
       tessellationDetail: 0
       bones: []
       spriteID: f7bf14a1ce7ddb046aafee6f2f6786b1
@@ -189,15 +204,47 @@ TextureImporter:
       name: Tile_Set_3
       rect:
         serializedVersion: 2
-        x: 1243
-        y: 1757
-        width: 321
-        height: 177
+        x: 1206
+        y: 1702
+        width: 301
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -150.5, y: 70}
+        - {x: -149.6511, y: 3.901904}
+        - {x: -106.793564, y: -77.30903}
+        - {x: 98.47142, y: -77.30903}
+        - {x: 149.22375, y: -46.85493}
+        - {x: 150.5, y: 71}
+      - - {x: 8.245051, y: -24.296337}
+        - {x: 15.012029, y: -24.296337}
+        - {x: 16.139858, y: -23.168407}
+        - {x: 21.779005, y: -23.168407}
+        - {x: 22.906836, y: -22.040478}
+        - {x: 22.906836, y: -24.296337}
+        - {x: 12.75637, y: -24.296337}
+        - {x: 11.62854, y: -25.424267}
+        - {x: 7.1172214, y: -25.424267}
+      - - {x: 34.18513, y: -19.784618}
+        - {x: 38.69645, y: -19.784618}
+        - {x: 42.079937, y: -24.296337}
+        - {x: 34.18513, y: -24.296337}
+      - - {x: 107.49406, y: -0.6098145}
+        - {x: 106.36623, y: 0.51811516}
+        - {x: 106.36623, y: 2.7739744}
+        - {x: 109.74971, y: 2.7739744}
+        - {x: 110.87754, y: 3.901904}
+        - {x: 109.74971, y: -9.633252}
+        - {x: 110.87754, y: -10.761182}
+        - {x: 107.49406, y: -10.761182}
+      - - {x: 118.77235, y: 2.7739744}
+        - {x: 122.15584, y: 0.51811516}
+        - {x: 122.15584, y: -7.3773923}
+        - {x: 123.28367, y: -9.633252}
+        - {x: 119.90018, y: -9.633252}
       tessellationDetail: 0
       bones: []
       spriteID: bcbb26ad9c8d7134a9b2f083ccb9e369
@@ -210,10 +257,10 @@ TextureImporter:
       name: Tile_Set_4
       rect:
         serializedVersion: 2
-        x: 186
-        y: 1206
-        width: 731
-        height: 314
+        x: 180
+        y: 1167
+        width: 707
+        height: 304
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +278,10 @@ TextureImporter:
       name: Tile_Set_5
       rect:
         serializedVersion: 2
-        x: 1057
-        y: 1211
-        width: 367
-        height: 315
+        x: 1021
+        y: 1171
+        width: 358
+        height: 305
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +299,10 @@ TextureImporter:
       name: Tile_Set_6
       rect:
         serializedVersion: 2
-        x: 618
-        y: 598
-        width: 1041
-        height: 489
+        x: 126
+        y: 1019
+        width: 94
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +320,10 @@ TextureImporter:
       name: Tile_Set_7
       rect:
         serializedVersion: 2
-        x: 695
-        y: 63
-        width: 979
-        height: 382
+        x: 585
+        y: 568
+        width: 1024
+        height: 485
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +341,10 @@ TextureImporter:
       name: Tile_Set_8
       rect:
         serializedVersion: 2
-        x: 130
-        y: 1054
-        width: 96
-        height: 102
+        x: 684
+        y: 197
+        width: 896
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
