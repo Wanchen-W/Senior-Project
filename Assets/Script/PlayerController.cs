@@ -13,9 +13,11 @@ public class PlayerController : MonoBehaviour
     private float speedCopy = 0f;
     private Rigidbody2D player;
     private Animator playerAnimation;
-    Vector2 movement;
+    public VectorValue startingPosition;
+    public VectorValue startingScale;
     private Vector2 right = new Vector2(0.2f,0.2f);
     private Vector2 left = new Vector2(-0.2f,0.2f);
+    private Vector2 respawnPoint;
 
     public float distanceFromGround = 2.0f;
 
@@ -33,6 +35,9 @@ public class PlayerController : MonoBehaviour
         GetComponent<Animator>().SetBool("onGroundCheck", true);
         GetComponent<Animator>().SetBool("attack", false);
         speedCopy = speed;
+        transform.position = startingPosition.initialValue;
+        transform.localScale = startingScale.initialValue;
+        respawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -54,7 +59,7 @@ public class PlayerController : MonoBehaviour
                 Jump();
 
             }
-
+            respawnPoint = transform.position;
         }
         else if (Input.GetButtonUp("Jump")) {
 
@@ -134,4 +139,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 }

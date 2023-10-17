@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Next_Level
+  - Previous_Level
   layers:
   - Default
   - TransparentFX
@@ -50,4 +52,7 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 834076791
+    locked: 0
+  - name: player obj
+    uniqueID: 3655558607
     locked: 0
