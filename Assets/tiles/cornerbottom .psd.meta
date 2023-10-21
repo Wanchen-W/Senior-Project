@@ -135,11 +135,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 150, y: 256}
-        - {x: 150, y: 41}
-        - {x: -256, y: 40}
+      - - {x: 150.48248, y: 256}
+        - {x: 150.8089, y: 50.100464}
+        - {x: -256, y: 49.78247}
         - {x: -256, y: -256}
-        - {x: 39, y: -256}
         - {x: 256, y: -256}
         - {x: 256, y: 256}
       tessellationDetail: 0
@@ -165,15 +164,35 @@ TextureImporter:
       physicsShape:
       - - {x: -256, y: 256}
         - {x: -256, y: -256}
-        - {x: -38, y: -256}
         - {x: 256, y: -256}
-        - {x: 256, y: 39}
-        - {x: -150, y: 41}
-        - {x: -150.76111, y: 254.23895}
+        - {x: 256, y: 50.219177}
+        - {x: -150.25586, y: 49.50348}
+        - {x: -149.15125, y: 256}
       tessellationDetail: 0
       bones: []
       spriteID: 1fc8e710835104649b33b3389eb04fe0
       internalID: -2006583695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornerbottom _2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 337
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34abb6a0c7a4dd043a6382504b84ea1f
+      internalID: 2032003960
       vertices: []
       indices: 
       edges: []
@@ -191,6 +210,7 @@ TextureImporter:
     nameFileIdTable:
       cornerbottom _0: 1154945847
       cornerbottom _1: -2006583695
+      cornerbottom _2: 1120618492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

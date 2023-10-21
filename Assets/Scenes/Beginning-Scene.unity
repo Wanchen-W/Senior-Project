@@ -193,7 +193,7 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -1979,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5625461399901179973, guid: 43242a6fb0a21f242a6140001826b34b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 2.78
       objectReference: {fileID: 0}
     - target: {fileID: 5625461399901179973, guid: 43242a6fb0a21f242a6140001826b34b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3608,6 +3608,7 @@ GameObject:
   - component: {fileID: 1134800609}
   - component: {fileID: 1134800608}
   - component: {fileID: 1134800611}
+  - component: {fileID: 1134800612}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3699,6 +3700,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e411131022061f8449c8ea069b1ef675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1134800612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134800607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7826b1f1762ea44b30843ac9f12d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1159075523}
@@ -4027,7 +4040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level 1
-  playerPosition: {x: -4.83, y: -0.27}
+  playerPosition: {x: -4.84, y: -1.35}
   storagePosition: {fileID: 11400000, guid: b73e333b1bbb5094ebab863d0238bcea, type: 2}
   playerScale: {x: 0.2, y: 0.2}
   storageScale: {fileID: 11400000, guid: 6a2be263b8b61424f9cb65b5c45f4771, type: 2}
@@ -4081,7 +4094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c036c9f48b1f8114695a71afce505297, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c036c9f48b1f8114695a71afce505297, type: 3}
       propertyPath: m_LocalPosition.z

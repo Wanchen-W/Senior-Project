@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 127
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,7 +126,7 @@ TextureImporter:
       name: corners_0
       rect:
         serializedVersion: 2
-        x: 383
+        x: 121
         y: 1204
         width: 128
         height: 128
@@ -135,10 +135,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -64, y: 48}
+      - - {x: -64, y: 64}
         - {x: -64, y: -64}
         - {x: 64, y: -64}
-        - {x: 64, y: 50}
+        - {x: 64, y: 64}
       tessellationDetail: 0
       bones: []
       spriteID: 34defefb7cfce1e46aac322440ddbd72
@@ -151,8 +151,8 @@ TextureImporter:
       name: corners_1
       rect:
         serializedVersion: 2
-        x: 631
-        y: 1203
+        x: 1100
+        y: 1202
         width: 128
         height: 128
       alignment: 0
@@ -160,10 +160,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -64, y: 48}
+      - - {x: -64, y: 64}
         - {x: -64, y: -64}
         - {x: 64, y: -64}
-        - {x: 64, y: 49}
+        - {x: 64, y: 64}
       tessellationDetail: 0
       bones: []
       spriteID: 4552e6445116e654a9e1315efc3230ae
@@ -197,8 +197,8 @@ TextureImporter:
       name: corners_3
       rect:
         serializedVersion: 2
-        x: 642
-        y: 940
+        x: 834
+        y: 914
         width: 128
         height: 128
       alignment: 0
@@ -248,10 +248,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -192, y: 50}
+      - - {x: -192, y: 64}
         - {x: -192, y: -64}
         - {x: 192, y: -64}
-        - {x: 192, y: 54}
+        - {x: 192, y: 64}
       tessellationDetail: 0
       bones: []
       spriteID: 3145735a280c369469bfd8272f59e65c
@@ -281,6 +281,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: corners_7
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 490
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e74bd613f0298e46ab8cfa9d584ac6c
+      internalID: -1122263336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -299,6 +320,7 @@ TextureImporter:
       corners_4: -1791673314
       corners_5: 597508937
       corners_6: 1610513556
+      corners_7: -1122263336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
