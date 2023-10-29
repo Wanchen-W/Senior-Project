@@ -1,23 +1,20 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using System.Collections;
 public class UISceneController : MonoBehaviour
 {
-    public RectTransform[] backgrounds; // Array of the moving backgrounds
-    public float speed = 1.0f; // Speed at which the backgrounds move
-    public float backgroundWidth; // Width of the background images
+    public RectTransform[] backgrounds;
+    public Image fadeOverlay; // The UI Image used for the fade effect
+    public float fadeDuration = 2.0f; 
+    public float speed = 5.0f;
+    public float backgroundWidth = 871.8356f; 
 
-    private Vector2[] originalPositions;
-
-    void Start()
+    private void Start()
     {
-        // Initialize the originalPositions array with the same length as backgrounds
-        originalPositions = new Vector2[backgrounds.Length];
-
-        // Store the original position of each background
-        for (int i = 0; i < backgrounds.Length; i++)
-        {
-            originalPositions[i] = backgrounds[i].anchoredPosition;
-        }
+        // Start with the fade overlay fully visible
+        fadeOverlay.color = new Color(0, 0, 0, 1);
+        fadeOverlay.gameObject.SetActive(true);
+        StartCoroutine(FadeOut());
     }
 
     void Update()
@@ -25,19 +22,37 @@ public class UISceneController : MonoBehaviour
         // Move each background
         for (int i = 0; i < backgrounds.Length; i++)
         {
-            MoveBackground(backgrounds[i], originalPositions[i]);
+            MoveBackground(backgrounds[i]);
         }
     }
 
-    void MoveBackground(RectTransform background, Vector2 originalPosition)
+    void MoveBackground(RectTransform background)
     {
-        Vector2 newPosition = background.anchoredPosition + new Vector2(-speed, 0) * Time.deltaTime;
-        background.anchoredPosition = newPosition;
+        // Calculate the new position
+        float newX = background.anchoredPosition.x - (speed * Time.deltaTime);
+        background.anchoredPosition = new Vector2(newX, background.anchoredPosition.y);
 
-        // If the background has moved off-screen, reset its position to the right to create a looping effect
         if (background.anchoredPosition.x <= -backgroundWidth)
         {
-            background.anchoredPosition = originalPosition;
+            Vector2 newPosition = new Vector2(
+                background.anchoredPosition.x + 2 * backgroundWidth,
+                background.anchoredPosition.y
+            );
+            background.anchoredPosition = newPosition;
         }
+    }
+
+    IEnumerator FadeOut()
+    {
+        float elapsed = 0;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(1, 0, elapsed / fadeDuration);
+            fadeOverlay.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
+        fadeOverlay.color = new Color(0, 0, 0, 0); 
+        fadeOverlay.gameObject.SetActive(false); 
     }
 }
