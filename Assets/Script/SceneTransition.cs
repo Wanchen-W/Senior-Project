@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition:MonoBehaviour
 {
-   public string sceneToLoad;
-   public Vector2 playerPosition;
+    public string sceneToLoad;
+    public Vector2 playerPosition;
     public VectorValue storagePosition;
     public Vector2 playerScale;
     public VectorValue storageScale;
