@@ -720,7 +720,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: 1408326978, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2126054148}
+      - m_Target: {fileID: 2126054151}
         m_TargetAssemblyTypeName: NPCDialogueScript, Assembly-CSharp
         m_MethodName: nextLine
         m_Mode: 1
@@ -1768,7 +1768,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: 1593003460, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2070,7 +2070,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: -1912959969, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2656,7 +2656,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: -420584594, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3030,7 +3030,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: 338771548, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3119,7 +3119,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: -1915358717, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3742,7 +3742,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: -466004520, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3974,8 +3974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -387.5, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -385.12897, y: 0}
+  m_SizeDelta: {x: 104.7421, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1926731456
 MonoBehaviour:
@@ -4541,7 +4541,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -639408689
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 14
   m_Sprite: {fileID: -1822616310, guid: a7b6485ff89a94448b4677ce97f42549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4568,7 +4568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8250169266279454816, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8250169266279454816, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayerID
@@ -4660,7 +4660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3532850971488354474, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -3532850971488354474, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayerID
@@ -4736,7 +4736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1128578746461755447, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -1128578746461755447, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayerID
@@ -4744,7 +4744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -82109580209463515, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -82109580209463515, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayerID
@@ -4772,7 +4772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1609719090194301641, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1609719090194301641, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayerID
@@ -4804,7 +4804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6721593982114531461, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6721593982114531461, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       propertyPath: m_SortingLayerID
@@ -4858,7 +4858,10 @@ PrefabInstance:
       addedObject: {fileID: 2126054147}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2126054148}
+      addedObject: {fileID: 2126054150}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: bc2fade174130184d8258fb03c95e849, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2126054151}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: bc2fade174130184d8258fb03c95e849, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2126054149}
@@ -4986,25 +4989,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2126054148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126054131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d09802cc13dfd3468670e7096d08762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogues:
-  - Hi!
-  - Nice to meet you!
-  dialogueText: {fileID: 1548362126}
-  dialoguePannel: {fileID: 517694085}
-  textSpeed: 0.06
-  playerClose: 0
 --- !u!61 &2126054149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5050,6 +5034,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.26, y: 22.376709}
   m_EdgeRadius: 0
+--- !u!114 &2126054150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126054131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7428caee4aef29542b7f4f5caddbc79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - ActorID: 2
+    message: Hi nice to meet you
+  - ActorID: 3
+    message: Nice to meet you too!
+  actor:
+  - name: 4414
+    description: Sad
+    sprite: {fileID: 593400608, guid: c315f09a424bac945beb051a878b8d71, type: 3}
+  - name: 4414
+    description: Normal
+    sprite: {fileID: 1949121619, guid: c315f09a424bac945beb051a878b8d71, type: 3}
+  - name: 4414
+    description: Smile
+    sprite: {fileID: -2054216449, guid: c315f09a424bac945beb051a878b8d71, type: 3}
+  - name: John
+    description: Normal
+    sprite: {fileID: 1603534022, guid: 8aec4c3a32ee70f4c91287b7f91dbcf4, type: 3}
+  - name: John
+    description: Angry
+    sprite: {fileID: -629986821, guid: 8aec4c3a32ee70f4c91287b7f91dbcf4, type: 3}
+  - name: John
+    description: Confuse
+    sprite: {fileID: -1592304486, guid: 8aec4c3a32ee70f4c91287b7f91dbcf4, type: 3}
+  - name: John
+    description: Smile
+    sprite: {fileID: 2098424448, guid: 8aec4c3a32ee70f4c91287b7f91dbcf4, type: 3}
+--- !u!114 &2126054151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126054131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d09802cc13dfd3468670e7096d08762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1548362126}
+  dialoguePannel: {fileID: 517694085}
+  textSpeed: 0.06
+  playerClose: 0
+  currentImage: {fileID: 1926731456}
+  currentName: {fileID: 1952267089}
 --- !u!1 &2145592698
 GameObject:
   m_ObjectHideFlags: 0

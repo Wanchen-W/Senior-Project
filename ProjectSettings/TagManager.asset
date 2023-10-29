@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Next_Level
   - Previous_Level
+  - Death
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 834076791
+    locked: 0
+  - name: NPC & Enemy
+    uniqueID: 1899010575
     locked: 0
   - name: player obj
     uniqueID: 3655558607
