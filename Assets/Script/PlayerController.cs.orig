@@ -40,7 +40,13 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
         GetComponent<Animator>().SetBool("onGroundCheck", true);
+<<<<<<< HEAD
+        GetComponent<Animator>().SetBool("isIdle", false);
+        GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetBool("gameOver", false);
+=======
         GetComponent<Animator>().SetBool("attack1", false);
+>>>>>>> 9801dbb4c7fca14ae2c85e1fcf4382bad357ea8e
         speedCopy = speed;
         transform.position = startingPosition.initialValue;
         transform.localScale = startingScale.initialValue;
@@ -69,7 +75,11 @@ public class PlayerController : MonoBehaviour
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
         GetComponent<Animator>().SetBool("onGroundCheck", true);
+<<<<<<< HEAD
+        GetComponent<Animator>().SetBool("attack", false);
         GetComponent<Animator>().SetBool("isIdle", false);
+        
+=======
         GetComponent<Animator>().SetBool("attack1", false);
 
         if (Time.time >= nextAttackTime)
@@ -86,6 +96,9 @@ public class PlayerController : MonoBehaviour
         {
             attackCount = 0;
         }
+
+
+>>>>>>> 9801dbb4c7fca14ae2c85e1fcf4382bad357ea8e
         if (Input.GetButtonDown("Jump")) {
             
             holdingJump = true;
@@ -109,7 +122,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Animator>().SetBool("attack1", true);
-	}
+        }
         if (directionX > 0f )
         {
             StartWalking();
@@ -130,6 +143,7 @@ public class PlayerController : MonoBehaviour
         playerAnimation.SetFloat("Jump",player.velocity.y);
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
     }
+    // ------------------------------------------------------------------------------------
     void Attack()
     {
         if (playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
@@ -161,6 +175,7 @@ public class PlayerController : MonoBehaviour
         playerAnimation.ResetTrigger("attack3");
     }
 
+    // -------------------------------------------------------------------------------------
     void Jump()
     {
 
