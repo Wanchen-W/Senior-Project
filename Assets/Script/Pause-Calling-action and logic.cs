@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenuToggle : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class SettingsMenuToggle : MonoBehaviour
     void Start()
     {
         SetPauseCanvasesActive(false);
-        settingsWindow.SetActive(false); // Ensure settings window is deactivated on start.
+        settingsWindow.SetActive(false); 
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -23,56 +24,48 @@ public class SettingsMenuToggle : MonoBehaviour
             if (settingsWindow.activeSelf)
             {
                 ToggleSettingsWindow();
-                return;  
+                return;
             }
 
             if (settingsMenuCanvas.activeSelf && !settingsWindow.activeSelf)
             {
                 ResumeGame();
-                return;  
+                return;
             }
 
             if (IsOnlyPauseCanvasActive())
             {
                 ResumeGame();
-                return; 
+                return;
             }
 
             if (!IsAnyPauseCanvasActive() && !settingsWindow.activeSelf && !settingsMenuCanvas.activeSelf)
             {
                 PauseGame();
-                return; 
+                return;
             }
         }
     }
-
 
     public void ToggleSettingsWindow()
     {
         settingsWindow.SetActive(!settingsWindow.activeSelf);
     }
+
     public void ToggleSettingsMenuCanvas()
     {
-        settingsMenuCanvas.SetActive(false);
+        settingsMenuCanvas.SetActive(!settingsMenuCanvas.activeSelf);
 
-        if (!settingsMenuCanvas.activeSelf)
+        
+        if (settingsMenuCanvas.activeSelf)
         {
-            // If settings canvas is not active, activate it and pause the game
-            settingsMenuCanvas.SetActive(true);
             PauseGame();
         }
-        else
+        else if (IsOnlyPauseCanvasActive())
         {
-            
-            settingsMenuCanvas.SetActive(false);
-
-            if (IsOnlyPauseCanvasActive())
-            {
-                ResumeGame();
-            }
+            ResumeGame();
         }
     }
-
 
     public void PauseGame()
     {
@@ -84,10 +77,16 @@ public class SettingsMenuToggle : MonoBehaviour
     public void ResumeGame()
     {
         SetPauseCanvasesActive(false);
-        settingsWindow.SetActive(false);  // Ensure settings window is also deactivated
-        settingsMenuCanvas.SetActive(false); 
+        settingsWindow.SetActive(false); // Ensure settings window is also deactivated
+        settingsMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void QuitToStartMenu()
+    {
+        // Load the "UI-Starting" scene
+        SceneManager.LoadScene("UI-Starting");
     }
 
     private void SetPauseCanvasesActive(bool isActive)
@@ -113,6 +112,7 @@ public class SettingsMenuToggle : MonoBehaviour
 
     private bool IsOnlyPauseCanvasActive()
     {
+        // This checks if the only active canvas is a pause canvas and not settings or menu
         return IsAnyPauseCanvasActive() && !settingsWindow.activeSelf && !settingsMenuCanvas.activeSelf;
     }
 }
