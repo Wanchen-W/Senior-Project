@@ -27,17 +27,26 @@ public class PlayerController : MonoBehaviour
     bool holdingJump;
     float counterJump = -5f;
 
+    // the following variables are for continuous attact actions: 
+    public float attackRate = 1f; // The rate at which the attack can be initiated
+    private float nextAttackTime = 0f; 
+    private int attackCount = 0; // To keep track of the attack count
+
+
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
         GetComponent<Animator>().SetBool("onGroundCheck", true);
-        GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetBool("attack1", false);
         speedCopy = speed;
         transform.position = startingPosition.initialValue;
         transform.localScale = startingScale.initialValue;
         respawnPoint = transform.position;
+
+        playerAnimation = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -47,7 +56,23 @@ public class PlayerController : MonoBehaviour
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
         GetComponent<Animator>().SetBool("onGroundCheck", true);
-        GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetBool("attack1", false);
+
+        if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+        }
+
+        // Reset attack count if enough time has passed
+        if (Time.time > nextAttackTime + 0.5f)
+        {
+            attackCount = 0;
+        }
+
 
         if (Input.GetButtonDown("Jump")) {
             
@@ -71,7 +96,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<Animator>().SetBool("attack", true);
+            GetComponent<Animator>().SetBool("attack1", true);
         }
         if (directionX > 0f )
         {
@@ -93,7 +118,39 @@ public class PlayerController : MonoBehaviour
         playerAnimation.SetFloat("Jump",player.velocity.y);
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
     }
+    // ------------------------------------------------------------------------------------
+    void Attack()
+    {
+        if (playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+        {
+            attackCount++;
+        }
 
+        switch (attackCount)
+        {
+            case 0:
+                playerAnimation.SetTrigger("attack1");
+                attackCount++;
+                break;
+            case 1:
+                playerAnimation.SetTrigger("attack2");
+                attackCount++;
+                break;
+            case 2:
+                playerAnimation.SetTrigger("attack3");
+                attackCount = 0; // Reset attack sequence
+                break;
+        }
+    }
+
+    public void ResetAttackTrigger()
+    {
+        playerAnimation.ResetTrigger("attack1");
+        playerAnimation.ResetTrigger("attack2");
+        playerAnimation.ResetTrigger("attack3");
+    }
+
+    // -------------------------------------------------------------------------------------
     void Jump()
     {
 
