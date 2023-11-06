@@ -8,6 +8,7 @@ TagManager:
   - Next_Level
   - Previous_Level
   - Death
+  - Health
   layers:
   - Default
   - TransparentFX

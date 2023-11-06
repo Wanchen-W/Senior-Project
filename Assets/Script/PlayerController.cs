@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -54,12 +55,21 @@ public class PlayerController : MonoBehaviour
     {
         if (NPCDialogueScript.isActive)
         {
+            GetComponent<Animator>().SetBool("isIdle", true);
             return;
         }
-
+        if(Player_Health.isDead)
+        {
+            GetComponent<Animator>().SetBool("gameOver", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("gameOver", false);
+        }
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
         GetComponent<Animator>().SetBool("onGroundCheck", true);
+        GetComponent<Animator>().SetBool("isIdle", false);
         GetComponent<Animator>().SetBool("attack1", false);
 
         if (Time.time >= nextAttackTime)
@@ -76,8 +86,6 @@ public class PlayerController : MonoBehaviour
         {
             attackCount = 0;
         }
-
-
         if (Input.GetButtonDown("Jump")) {
             
             holdingJump = true;
@@ -101,7 +109,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Animator>().SetBool("attack1", true);
-        }
+	}
         if (directionX > 0f )
         {
             StartWalking();
@@ -122,7 +130,6 @@ public class PlayerController : MonoBehaviour
         playerAnimation.SetFloat("Jump",player.velocity.y);
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
     }
-    // ------------------------------------------------------------------------------------
     void Attack()
     {
         if (playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
@@ -154,7 +161,6 @@ public class PlayerController : MonoBehaviour
         playerAnimation.ResetTrigger("attack3");
     }
 
-    // -------------------------------------------------------------------------------------
     void Jump()
     {
 
@@ -186,7 +192,11 @@ public class PlayerController : MonoBehaviour
         return false;
 
     }
-
+    public void gameOver()
+    {
+        Debug.Log("Go to game over");
+        SceneManager.LoadScene("Game Oveer");
+    }
     private void FixedUpdate() {
 
         if (jumping) {

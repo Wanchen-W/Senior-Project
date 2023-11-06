@@ -7,6 +7,8 @@ public class Player_Health : MonoBehaviour {
 
     private GameObject respawn;
     public static int healthNumber;
+    public static int lifeLeft;
+    public static bool isDead;
     public Health currentHealth;
     public GameObject health3;
     public GameObject health2;
@@ -16,11 +18,13 @@ public class Player_Health : MonoBehaviour {
     {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
         healthNumber = currentHealth.healthInitial;
+        lifeLeft = currentHealth.lifeInital;
     }
 
     void Update()
     {
         currentHealth.healthInitial = healthNumber;
+        currentHealth.lifeInital = lifeLeft;
         if (healthNumber == 3) {
             health3.SetActive(true);
             health2.SetActive(true);
@@ -46,12 +50,12 @@ public class Player_Health : MonoBehaviour {
             Respawn();
         }
 
-     /*   else if (collision.CompareTag("Health")) {
+        else if (collision.CompareTag("Health")) {
 
             GainHealth();
             Destroy(collision.gameObject);
 
-        }*/
+        }
 
     }
 
@@ -107,14 +111,21 @@ public class Player_Health : MonoBehaviour {
     }
 
     public void Respawn() {
-
+        lifeLeft--;
+        if (lifeLeft == 0)
+        {
+            Debug.Log("dead");
+            isDead = true;
+            return;
+        }
+        else
+        {
+            gameObject.transform.position = respawn.transform.position;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
         health3.SetActive(true);
         health2.SetActive(true);
         health1.SetActive(true);
         healthNumber = 3;
-        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-        gameObject.transform.position = respawn.transform.position;
- 
     }
 }
