@@ -6,4 +6,5 @@ using UnityEngine;
 public class Health : ScriptableObject
 {
     public int healthInitial;
+    public int lifeInital;
 }

@@ -9,10 +9,13 @@ public class DiaologueManager : MonoBehaviour
 {
     public Messages[] messages;
     public Actors[] actor;
-
     public void findDialogue()
     {
         FindObjectOfType<NPCDialogueScript>().openDialogues(messages,actor);
+    }
+    public void findDialogue2()
+    {
+        FindObjectOfType<cutdialogue>().openDialogues(messages, actor);
     }
     // Update is called once per frame
     void Update()

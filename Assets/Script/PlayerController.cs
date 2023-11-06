@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,7 +34,9 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
         GetComponent<Animator>().SetBool("onGroundCheck", true);
+        GetComponent<Animator>().SetBool("isIdle", false);
         GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetBool("gameOver", false);
         speedCopy = speed;
         transform.position = startingPosition.initialValue;
         transform.localScale = startingScale.initialValue;
@@ -45,14 +48,23 @@ public class PlayerController : MonoBehaviour
     {
         if (NPCDialogueScript.isActive)
         {
+            GetComponent<Animator>().SetBool("isIdle", true);
             return;
         }
-
+        if(Player_Health.isDead)
+        {
+            GetComponent<Animator>().SetBool("gameOver", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("gameOver", false);
+        }
         directionX = Input.GetAxis("Horizontal");
         directionY = Input.GetAxis("Vertical");
         GetComponent<Animator>().SetBool("onGroundCheck", true);
         GetComponent<Animator>().SetBool("attack", false);
-
+        GetComponent<Animator>().SetBool("isIdle", false);
+        
         if (Input.GetButtonDown("Jump")) {
             
             holdingJump = true;
@@ -129,7 +141,11 @@ public class PlayerController : MonoBehaviour
         return false;
 
     }
-
+    public void gameOver()
+    {
+        Debug.Log("Go to game over");
+        SceneManager.LoadScene("Game Oveer");
+    }
     private void FixedUpdate() {
 
         if (jumping) {

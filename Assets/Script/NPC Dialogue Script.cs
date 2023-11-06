@@ -12,6 +12,7 @@ public class NPCDialogueScript : MonoBehaviour
 {
 
     public TextMeshProUGUI dialogueText;
+    public GameObject mark;
     public GameObject dialoguePannel;
     private int index;
     public float textSpeed;
@@ -23,6 +24,13 @@ public class NPCDialogueScript : MonoBehaviour
     public static bool angry_speaking = false;
     Messages[] currentMessage;
     Actors[] currentActors;
+    public int divergeIndex;
+    public int[] choiceIndexes;
+    private Coroutine typingCoroutine;
+    public Button continueButton;
+    public Button choice1;
+    public Button choice2;
+    public Button choice3;
     public void openDialogues(Messages[] messages, Actors[] actors)
     {
         isActive = true;
@@ -31,17 +39,10 @@ public class NPCDialogueScript : MonoBehaviour
     }
     void Update()
     {
+        check();
         if (isActive && currentActors[currentMessage[index].ActorID].name == "John")
         {
-            
-            if(currentActors[currentMessage[index].ActorID].description == "Angry") {
-
-                angry_speaking = true;
-            }
-            else
-            {
-                speaking = true;
-            }
+            speaking = true;
         }
         else if(isActive && currentActors[currentMessage[index].ActorID].name != "John")
         {
@@ -58,9 +59,10 @@ public class NPCDialogueScript : MonoBehaviour
                 zeroText();
             }
             else {
+                zeroText();
                 FindObjectOfType<DiaologueManager>().findDialogue();
                 dialoguePannel.SetActive(true);
-                StartCoroutine(Typing());
+                typingCoroutine = StartCoroutine(Typing());
             }
         }   
     }
@@ -69,6 +71,7 @@ public class NPCDialogueScript : MonoBehaviour
     IEnumerator Typing() {
         foreach (char item in currentMessage[index].message.ToCharArray())
         {
+            
             dialogueText.text += item;
             currentImage.sprite = currentActors[currentMessage[index].ActorID].sprite;
             currentName.text = currentActors[currentMessage[index].ActorID].name;
@@ -79,9 +82,18 @@ public class NPCDialogueScript : MonoBehaviour
     public void nextLine()
     {
         if(index< (currentMessage.Length-1)) {
-            index++;
+            if (index == choiceIndexes[1] || index == choiceIndexes[3])
+            {
+                index = divergeIndex;
+            }
+            else
+            {
+                index++;
+            }
             dialogueText.text = "";
-            StartCoroutine(Typing());
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = StartCoroutine(Typing());
+         
         }
         else
         {
@@ -93,6 +105,7 @@ public class NPCDialogueScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player") {
+            mark.SetActive(true);
             playerClose = true;
             if ((this.transform.position.x - collision.transform.position.x)>0) {
                 
@@ -112,9 +125,45 @@ public class NPCDialogueScript : MonoBehaviour
             Debug.Log("0");
             playerClose = false;
             zeroText();
+            mark.SetActive(false);
         }
     }
 
+    public void check()
+    {
+        if(index == divergeIndex)
+        {
+            continueButton.gameObject.SetActive(false);
+            choice1.gameObject.SetActive(true);
+            choice2.gameObject.SetActive(true);
+            choice3.gameObject.SetActive(true);
+        }
+        else
+        {
+            continueButton.gameObject.SetActive(true);
+            choice1.gameObject.SetActive(false);
+            choice2.gameObject.SetActive(false);
+            choice3.gameObject.SetActive(false);
+        }
+    }
+    public void choice1Start() 
+    {
+        dialogueText.text = "";
+        index = choiceIndexes[0];
+        typingCoroutine = StartCoroutine(Typing());
+    }
+    public void choice2Start()
+    {
+        dialogueText.text = "";
+        index = choiceIndexes[2];
+        typingCoroutine = StartCoroutine(Typing());
+    }
+    public void choice3Start()
+    {
+        dialogueText.text = "";
+        index = choiceIndexes[4];
+        typingCoroutine = StartCoroutine(Typing());
+    }
     public void zeroText()
     {
         dialoguePannel.SetActive(false);
