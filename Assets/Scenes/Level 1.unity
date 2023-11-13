@@ -13865,6 +13865,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1159075523}
+  minX: -100
+  maxX: 100
+  minY: -100
+  maxY: 100
 --- !u!1 &1147503706
 GameObject:
   m_ObjectHideFlags: 0
@@ -14143,6 +14147,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackRate: 1
+  tr: {fileID: 0}
 --- !u!95 &1159075519
 Animator:
   serializedVersion: 5
