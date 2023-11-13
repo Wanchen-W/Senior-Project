@@ -4725,6 +4725,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1159075523}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!1 &1159075517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: c036c9f48b1f8114695a71afce505297, type: 3}
@@ -4751,6 +4755,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackRate: 1
+  tr: {fileID: 0}
 --- !u!95 &1159075519
 Animator:
   serializedVersion: 5
@@ -5121,7 +5126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c036c9f48b1f8114695a71afce505297, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c036c9f48b1f8114695a71afce505297, type: 3}
       propertyPath: m_LocalPosition.z

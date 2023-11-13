@@ -3882,7 +3882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007e122cda533374baf6d12e25ce4943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnMessage: {fileID: 0}
+  respawnMessage: {fileID: 36020497}
 --- !u!95 &931918527
 Animator:
   serializedVersion: 5
