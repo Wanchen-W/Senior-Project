@@ -3,16 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Next_Level
+  - Previous_Level
+  - Death
+  - Health
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Enemy
   - 
   - 
   - 
@@ -40,4 +45,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: face
+    uniqueID: 3668578255
+    locked: 0
+  - name: Background
+    uniqueID: 2988486345
+    locked: 0
+  - name: Ground
+    uniqueID: 834076791
+    locked: 0
+  - name: NPC & Enemy
+    uniqueID: 1899010575
+    locked: 0
+  - name: player obj
+    uniqueID: 3655558607
     locked: 0

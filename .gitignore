@@ -54,6 +54,9 @@ ExportedObj/
 
 # Unity3D generated file on crash reports
 sysinfo.txt
+#Assets/Scenes/SampleScene.Unity
+#Assets/Scenes/SampleScene.Unity.meta
+Assets/Script/TrackingCamera.cs.meta
 
 # Builds
 *.apk
