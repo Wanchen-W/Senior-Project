@@ -4725,10 +4725,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1159075523}
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
+  minX: -10
+  maxX: 80
+  minY: -30
+  maxY: 40
 --- !u!1 &1159075517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: c036c9f48b1f8114695a71afce505297, type: 3}

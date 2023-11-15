@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
         if(Player_Health.isDead)
         {
             GetComponent<Animator>().SetBool("gameOver", true);
+            return;
         }
         else
         {
