@@ -1,41 +1,34 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using System.Collections;
 
-public class TextClickFeedback_text : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class TextClickVisualFeedback : MonoBehaviour
 {
-    public Vector3 clickedScale = new Vector3(1.1f, 1.1f, 1f);
-    public float feedbackDuration = 0.1f;
+    public Color defaultColor = Color.white;
+    public Color onClickColor = Color.red;
+    public float feedbackDuration = 0.2f;
+    public Vector3 enlargementScale = new Vector3(1.1f, 1.1f, 1.1f); // New addition
 
-    private Vector3 defaultScale; // Will store the original scale of the object
-    private Coroutine currentFeedbackCoroutine = null;
+    private Text textComponent;
+    private Vector3 originalScale; // New addition
 
     private void Awake()
     {
-        defaultScale = transform.localScale; // Store the original scale
+        textComponent = GetComponent<Text>();
+        originalScale = transform.localScale; // New addition
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void ShowVisualFeedback()
     {
-        if (currentFeedbackCoroutine != null)
-        {
-            StopCoroutine(currentFeedbackCoroutine);
-        }
-        currentFeedbackCoroutine = StartCoroutine(FeedbackEffect());
+        StartCoroutine(VisualFeedbackCoroutine());
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    private IEnumerator VisualFeedbackCoroutine()
     {
-        if (currentFeedbackCoroutine != null)
-        {
-            StopCoroutine(currentFeedbackCoroutine);
-            transform.localScale = defaultScale; // Reset to the original scale
-        }
-    }
-
-    private System.Collections.IEnumerator FeedbackEffect()
-    {
-        transform.localScale = clickedScale;
-        yield return new WaitForSecondsRealtime(feedbackDuration);
-        transform.localScale = defaultScale;
+        textComponent.color = onClickColor;
+        transform.localScale = enlargementScale; // New addition
+        yield return new WaitForSeconds(feedbackDuration);
+        textComponent.color = defaultColor;
+        transform.localScale = originalScale; // New addition
     }
 }

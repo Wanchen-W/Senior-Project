@@ -1,6 +1,0 @@
-projectKey=Senior_Project_Update
-serverUrl=http://localhost:9000
-serverVersion=9.9.2.77730
-dashboardUrl=http://localhost:9000/dashboard?id=Senior_Project_Update
-ceTaskId=AYt6Kfdq0mPuVIQGMS0z
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYt6Kfdq0mPuVIQGMS0z

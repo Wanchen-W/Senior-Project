@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/UI-Loading.unity
-    guid: b2fed0910c745984db8402c1d2d85e14
-  - enabled: 1
-    path: Assets/Scenes/UI-Starting.unity
-    guid: 22c884efbe028a44eb08967a3abd1387
-  - enabled: 1
     path: Assets/Scenes/Beginning-Scene.unity
     guid: 22531eec5578a6f4590e4362f8b2bdfc
   - enabled: 1
@@ -23,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Oveer.unity
     guid: 31d89f333b2c82d4a8eea8d247b2f5a1
+    path: Assets/Scenes/UI-pause.unity
+    guid: 8f250740d216e6b4b9bb06e665576383
   m_configObjects: {}

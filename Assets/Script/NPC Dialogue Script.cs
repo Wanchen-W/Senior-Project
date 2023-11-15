@@ -122,6 +122,7 @@ public class NPCDialogueScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("0");
             playerClose = false;
             zeroText();
             mark.SetActive(false);
