@@ -25,10 +25,12 @@ public class animationController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            respawnMessage.gameObject.SetActive(false);
-            GetComponent<Animator>().SetBool("entered", false);
+        if (!Player_Health.isDead) { 
+            if (collision.tag == "Player")
+            {
+                respawnMessage.gameObject.SetActive(false);
+                GetComponent<Animator>().SetBool("entered", false);
+            }
         }
     }
 }

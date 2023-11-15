@@ -19,6 +19,7 @@ public class Player_Health : MonoBehaviour {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
         healthNumber = currentHealth.healthInitial;
         lifeLeft = currentHealth.lifeInital;
+        isDead = false;
     }
 
     void Update()

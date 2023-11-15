@@ -33,6 +33,16 @@ public class PlayerController : MonoBehaviour
     private float nextAttackTime = 0f; 
     private int attackCount = 0; // To keep track of the attack count
 
+    //Variables for dash mechanic
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+    private float dashEnergyConsumption = 25f;
+
+    [SerializeField] private TrailRenderer tr;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +63,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (isDashing)
+            return;
+
         if (NPCDialogueScript.isActive)
         {
             GetComponent<Animator>().SetBool("isIdle", true);
@@ -86,6 +100,12 @@ public class PlayerController : MonoBehaviour
         {
             attackCount = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && player.velocity.x != 0)
+        {
+            StartCoroutine(Dash());
+        }
+
         if (Input.GetButtonDown("Jump")) {
             
             holdingJump = true;
@@ -110,19 +130,19 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("attack1", true);
 	}
-        if (directionX > 0f )
+        if (directionX > 0f && !isDashing)
         {
             StartWalking();
             player.velocity = new Vector2 ( directionX * speed, player.velocity.y);
             transform.localScale = right;
         }
-        else if (directionX < 0f )
+        else if (directionX < 0f && !isDashing)
         {
             StartWalking();
             player.velocity = new Vector2(directionX * speed, player.velocity.y);
             transform.localScale = left;
         }
-        else
+        else if (!isDashing)
         {
             StartWalking();
             player.velocity = new Vector2(0, player.velocity.y);
@@ -199,6 +219,9 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate() {
 
+        if (isDashing)
+            return;
+
         if (jumping) {
 
             if (!holdingJump && Vector2.Dot(player.velocity, Vector2.up) > 0) {
@@ -208,6 +231,30 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+    }
+
+    private IEnumerator Dash()
+    {
+
+        canDash = false;
+        isDashing = true;
+        //energy.canRegen = false;
+        float orignialGravity = player.gravityScale;
+        player.gravityScale = 0f;
+        //energy.loseEnergy(dashEnergyConsumption);
+        //peHUD.SetEnergy(energy.currentEnergy);
+        //Debug.Log("Velocity Pre Dash: " + player.velocity.x);
+        player.velocity = new Vector2(directionX * dashingPower, 0f);
+        //Debug.Log("Velocity Mid Dash: " + player.velocity.x);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        player.gravityScale = orignialGravity;
+        isDashing = false;
+        //energy.canRegen = true;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
 
     }
 
