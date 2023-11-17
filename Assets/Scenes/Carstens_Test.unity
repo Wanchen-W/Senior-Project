@@ -5094,7 +5094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0211370e37a59458e5c2d09f83e5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level 1
+  sceneToLoad: Level 2
   playerPosition: {x: -4.84, y: -1.207}
   storagePosition: {fileID: 11400000, guid: b73e333b1bbb5094ebab863d0238bcea, type: 2}
   playerScale: {x: 0.2, y: 0.2}
@@ -5145,7 +5145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c036c9f48b1f8114695a71afce505297, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.57
+      value: 11.76
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: c036c9f48b1f8114695a71afce505297, type: 3}
       propertyPath: m_LocalPosition.y
