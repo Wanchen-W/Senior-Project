@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Oveer.unity
     guid: 31d89f333b2c82d4a8eea8d247b2f5a1
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 2a82b06e973bc394d968307dd0fb441a
+  - enabled: 1
+    path: Assets/Scenes/NPC Event.unity
+    guid: 6e6c69aec812c3a49a3455413cf96cb1
   m_configObjects: {}
