@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class EnemyHealth_V2 : MonoBehaviour
     void Start() {
 
         currentHealth = maxHealth;
-
+        Debug.Log(gameObject.GetComponent<BoxCollider2D>().isTrigger);
     }
 
     public void TakeDamage(int damage) {
@@ -32,9 +33,9 @@ public class EnemyHealth_V2 : MonoBehaviour
         Debug.Log("Enemy died");
 
         animator.SetBool("isDead", true);
-
-        GetComponent<Collider2D>().enabled = false;
-
+        Debug.Log(GetComponent<BoxCollider2D>().enabled);
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Enemy1AI>().enabled = false;
 
         StartCoroutine(Delay(5f));
