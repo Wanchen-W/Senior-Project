@@ -92,15 +92,15 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
             }
         }
 
-        // Reset attack count if enough time has passed
-        if (Time.time > nextAttackTime + 0.5f)
+        // Reset attack count if enough time has passed since the last attack
+        if (Time.time > nextAttackTime)
         {
             attackCount = 0;
         }
+
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && player.velocity.x != 0)
         {
@@ -153,28 +153,36 @@ public class PlayerController : MonoBehaviour
     }
     void Attack()
     {
-        if (playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || playerAnimation.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+        // Update next attack time
+        nextAttackTime = Time.time + 1f / attackRate;
+        attackCount = (attackCount + 1) % 3; // 3 attacks in the combo
+
+        if (attackCount >= 2)
+        {
+            attackCount = 0; // Reset attack sequence if already at the last attack
+        }
+        else
         {
             attackCount++;
-        }
 
-        switch (attackCount)
+            switch (attackCount)
+            {
+                case 0:
+                    playerAnimation.SetTrigger("attack1");
+                    break;
+                case 1:
+                    playerAnimation.SetTrigger("attack2");
+                    break;
+                case 2:
+                    playerAnimation.SetTrigger("attack3");
+                    break;
+            }
+        }
+        if (Time.time > nextAttackTime)
         {
-            case 0:
-                playerAnimation.SetTrigger("attack1");
-                attackCount++;
-                break;
-            case 1:
-                playerAnimation.SetTrigger("attack2");
-                attackCount++;
-                break;
-            case 2:
-                playerAnimation.SetTrigger("attack3");
-                attackCount = 0; // Reset attack sequence
-                break;
+            attackCount = 0;
         }
     }
-
     public void ResetAttackTrigger()
     {
         playerAnimation.ResetTrigger("attack1");

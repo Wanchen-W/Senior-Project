@@ -19,6 +19,9 @@ EditorBuildSettings:
     guid: 22531eec5578a6f4590e4362f8b2bdfc
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
+    guid: 2a82b06e973bc394d968307dd0fb441a
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
     guid: 9919b8359fce54e498e533d352c4b89b
   - enabled: 1
     path: Assets/Scenes/Game Oveer.unity
