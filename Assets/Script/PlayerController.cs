@@ -4,6 +4,7 @@ using UnityEditor;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,10 +40,13 @@ public class PlayerController : MonoBehaviour
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
-    private float dashEnergyConsumption = 25f;
+    private float dashEnergyConsumption = 70f;
 
     [SerializeField] private TrailRenderer tr;
 
+    public float maxEnergy = 100f;
+    private float currentEnergy;
+    public Slider energyBar;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +59,10 @@ public class PlayerController : MonoBehaviour
         transform.position = startingPosition.initialValue;
         transform.localScale = startingScale.initialValue;
         respawnPoint = transform.position;
+
+        currentEnergy = maxEnergy;
+        energyBar.maxValue = maxEnergy;
+        energyBar.value = currentEnergy;
 
         playerAnimation = GetComponent<Animator>();
 
@@ -102,7 +110,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && player.velocity.x != 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && player.velocity.x != 0 && dashEnergyConsumption <= currentEnergy)
         {
             StartCoroutine(Dash());
         }
@@ -130,7 +138,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Animator>().SetBool("attack1", true);
-	}
+	    }
         if (directionX > 0f && !isDashing)
         {
             StartWalking();
@@ -150,6 +158,10 @@ public class PlayerController : MonoBehaviour
         }
         playerAnimation.SetFloat("Jump",player.velocity.y);
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
+
+        if (currentEnergy < maxEnergy)
+            currentEnergy += 0.1f;
+        setEnergy(currentEnergy);
     }
     void Attack()
     {
@@ -243,12 +255,19 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void setEnergy(float en)
+    {
+        energyBar.value = en;
+    }
+
     private IEnumerator Dash()
     {
 
         canDash = false;
         isDashing = true;
         //energy.canRegen = false;
+        currentEnergy -= dashEnergyConsumption;
+        setEnergy(currentEnergy);
         float orignialGravity = player.gravityScale;
         player.gravityScale = 0f;
         //energy.loseEnergy(dashEnergyConsumption);
