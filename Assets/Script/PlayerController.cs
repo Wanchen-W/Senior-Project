@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask GroundLayer;
 
+    private bool attackInProgress = false;
+
+
     bool jumping;
     bool holdingJump;
     float counterJump = -5f;
@@ -72,8 +75,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (isDashing)
-            return;
+        if (isDashing || attackInProgress) return;
+    
 
         if (NPCDialogueScript.isActive)
         {
@@ -194,6 +197,11 @@ public class PlayerController : MonoBehaviour
         {
             attackCount = 0;
         }
+    }
+    public void ResetAttack()
+    {
+        attackInProgress = false;
+        ResetAttackTrigger();
     }
     public void ResetAttackTrigger()
     {
