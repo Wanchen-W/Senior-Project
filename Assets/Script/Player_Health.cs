@@ -95,8 +95,10 @@ public class Player_Health : MonoBehaviour {
     }
      
     private void GainHealth() {
-        healthNumber = healthNumber + 1;
-
+        if (healthNumber < 3)
+        {
+            healthNumber = healthNumber + 1;
+        }
         if (!health2.activeInHierarchy) {
 
             health2.SetActive(true);
@@ -113,7 +115,7 @@ public class Player_Health : MonoBehaviour {
 
     public void Respawn() {
         lifeLeft--;
-        if (lifeLeft == 0)
+        if (lifeLeft <= 0)
         {
             Debug.Log("dead");
             isDead = true;
