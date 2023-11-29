@@ -21,5 +21,9 @@ public class GameOverScene : MonoBehaviour
     public void MenuButton()
     {
         SceneManager.LoadScene("UI-Starting");
+        playerHealth.healthInitial = 3;
+        playerHealth.lifeInital = 3;
+        startingPosition.initialValue = startLevel0;
+        startingScale.initialValue = scaleLevel0;
     }
 }
