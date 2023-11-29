@@ -1229,7 +1229,6 @@ GameObject:
   - component: {fileID: 8673304416711340419}
   - component: {fileID: 6996269340507696853}
   - component: {fileID: 4101173541554117939}
-  - component: {fileID: 7935943699379421558}
   - component: {fileID: 5766453976217818444}
   m_Layer: 7
   m_Name: enemy2
@@ -1276,7 +1275,7 @@ Transform:
   - {fileID: 4809558986297350139}
   - {fileID: 7814433188348216822}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5736756842131658159
 MonoBehaviour:
@@ -1397,21 +1396,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.609194, y: 14.122383}
   m_EdgeRadius: 0
---- !u!114 &7935943699379421558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2963314150892089283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ade5c4ff27f5a49bf4cc950acadb2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  distanceBetween: 6
-  minimunDistance: 2.5
 --- !u!114 &5766453976217818444
 MonoBehaviour:
   m_ObjectHideFlags: 0
