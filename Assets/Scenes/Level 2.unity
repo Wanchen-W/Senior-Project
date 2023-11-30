@@ -16645,7 +16645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1159075523}
   minX: -100
-  maxX: 100
+  maxX: 1000
   minY: -100
   maxY: 100
 --- !u!1 &1142222733

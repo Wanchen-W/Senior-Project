@@ -3460,7 +3460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeline: {fileID: 857090359}
   played: {fileID: 11400000, guid: 99aa24785d08b144bbf3a0fb17519708, type: 2}
-  healthCanvas: {fileID: 0}
+  healthCanvas: {fileID: 1528470040}
 --- !u!1 &862973657
 GameObject:
   m_ObjectHideFlags: 0
