@@ -115,4 +115,38 @@ public class SettingsMenuToggle : MonoBehaviour
         // This checks if the only active canvas is a pause canvas and not settings or menu
         return IsAnyPauseCanvasActive() && !settingsWindow.activeSelf && !settingsMenuCanvas.activeSelf;
     }
+
+    public void QuitToDesktop()
+    {
+        Application.Quit();
+    }
+
+    public void CloseSettingsWindow()
+    {
+        settingsWindow.SetActive(false);
+
+    }
+
+    public class AudioManager : MonoBehaviour
+    {
+        public static AudioManager Instance; // Singleton instance
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void ToggleMute()
+        {
+            AudioListener.volume = AudioListener.volume == 0 ? 1 : 0;
+        }
+    }
 }
