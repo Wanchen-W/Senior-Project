@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour {
@@ -13,6 +14,7 @@ public class Player_Health : MonoBehaviour {
     public GameObject health3;
     public GameObject health2;
     public GameObject health1;
+    public bool fall = false;
 
     void Start()
     {
@@ -47,7 +49,7 @@ public class Player_Health : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.CompareTag("Death")) {
-
+            fall = true;
             Respawn();
         }
 
@@ -115,11 +117,22 @@ public class Player_Health : MonoBehaviour {
 
     public void Respawn() {
         lifeLeft--;
-        if (lifeLeft <= 0)
+        if (lifeLeft <= 0 && fall == false)
         {
             Debug.Log("dead");
             isDead = true;
             return;
+        }
+        else if (lifeLeft<=0 && fall == true)
+        {
+            SceneManager.LoadScene("Game Oveer");
+        }
+        else if (lifeLeft >=0 && fall ==true)
+        {
+
+            fall = false;
+            gameObject.transform.position = respawn.transform.position;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         else
         {

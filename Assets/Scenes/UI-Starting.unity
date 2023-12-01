@@ -1717,7 +1717,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <color=#feae34> A amazing map</color>
+  m_Text: '<color=#feae34> Level 1
+
+    </color>'
 --- !u!222 &509268924
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4328,7 +4330,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <color=#feae34> A amazing map</color>
+  m_Text: <color=#feae34> NPC Dialogue</color>
 --- !u!222 &1064059817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7228,7 +7230,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <color=#feae34> A amazing map</color>
+  m_Text: <color=#feae34> Introduction </color>
 --- !u!222 &1799700118
 CanvasRenderer:
   m_ObjectHideFlags: 0

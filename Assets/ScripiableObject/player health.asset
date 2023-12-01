@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: player health
   m_EditorClassIdentifier: 
   healthInitial: 3
-  lifeInital: 2
+  lifeInital: 3
