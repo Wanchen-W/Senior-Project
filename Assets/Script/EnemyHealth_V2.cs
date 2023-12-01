@@ -7,7 +7,7 @@ public class EnemyHealth_V2 : MonoBehaviour
 {
     
     public Animator animator;
-
+    public GameObject hitEffectPrefab; 
     public int maxHealth;
     public int enemyType;
     int currentHealth;
@@ -18,16 +18,24 @@ public class EnemyHealth_V2 : MonoBehaviour
         Debug.Log(gameObject.GetComponent<BoxCollider2D>().isTrigger);
     }
 
-    public void TakeDamage(int damage) {
-
+    public void TakeDamage(int damage)
+    {
         currentHealth -= damage;
 
-        if (currentHealth <= 0) {
+        if (hitEffectPrefab != null)
+        {
+            // Instantiate the hit effect at the enemy's position and as a child of the enemy
+            GameObject effect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity, transform);
 
+            effect.transform.localPosition = new Vector3(-1/3, 2, -1);
+        }
+
+        if (currentHealth <= 0)
+        {
             Die();
-
         }
     }
+
 
     void Die() {
 
