@@ -4521,7 +4521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5625461399901179973, guid: 43242a6fb0a21f242a6140001826b34b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.78
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 5625461399901179973, guid: 43242a6fb0a21f242a6140001826b34b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6854,8 +6854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1159075523}
-  minX: -10
-  maxX: 80
+  minX: 0
+  maxX: 74
   minY: -30
   maxY: 40
 --- !u!1 &1145793281

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3201232c172ec9438c0095fdae382e9, type: 3}
   m_Name: timelineControl
   m_EditorClassIdentifier: 
-  hasPlayed: 1
+  hasPlayed: 0

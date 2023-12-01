@@ -3194,7 +3194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level 2
-  playerPosition: {x: 242.3, y: 9.8}
+  playerPosition: {x: 242.3, y: 9.6}
   storagePosition: {fileID: 11400000, guid: b73e333b1bbb5094ebab863d0238bcea, type: 2}
   playerScale: {x: -0.2, y: 0.2}
   storageScale: {fileID: 11400000, guid: 6a2be263b8b61424f9cb65b5c45f4771, type: 2}
