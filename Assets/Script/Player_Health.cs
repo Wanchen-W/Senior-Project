@@ -14,6 +14,7 @@ public class Player_Health : MonoBehaviour {
     public GameObject health3;
     public GameObject health2;
     public GameObject health1;
+    PlayerSound playerSound;
     public bool fall = false;
 
     void Start()
@@ -22,6 +23,7 @@ public class Player_Health : MonoBehaviour {
         healthNumber = currentHealth.healthInitial;
         lifeLeft = currentHealth.lifeInital;
         isDead = false;
+        playerSound = GetComponent<PlayerSound>();
     }
 
     void Update()
@@ -75,6 +77,7 @@ public class Player_Health : MonoBehaviour {
     private void LoseHealth()
     {
         healthNumber = healthNumber - 1;
+        playerSound.playTookDamage();
         if (health3.activeInHierarchy) {
 
             health3.SetActive(false);
@@ -97,6 +100,7 @@ public class Player_Health : MonoBehaviour {
     }
      
     private void GainHealth() {
+        playerSound.playHealthUp();
         if (healthNumber < 3)
         {
             healthNumber = healthNumber + 1;
@@ -117,6 +121,7 @@ public class Player_Health : MonoBehaviour {
 
     public void Respawn() {
         lifeLeft--;
+        playerSound.playDeath();
         if (lifeLeft <= 0 && fall == false)
         {
             Debug.Log("dead");
