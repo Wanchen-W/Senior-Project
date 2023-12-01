@@ -6183,7 +6183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007e122cda533374baf6d12e25ce4943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnMessage: {fileID: 0}
+  respawnMessage: {fileID: 1290405891}
 --- !u!95 &872386063
 Animator:
   serializedVersion: 5
@@ -8485,7 +8485,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 50
+  attackDamage: 1
   attackRate: 5
 --- !u!114 &1133559978
 MonoBehaviour:
@@ -10366,7 +10366,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
