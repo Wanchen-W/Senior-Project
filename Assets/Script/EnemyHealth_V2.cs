@@ -12,15 +12,18 @@ public class EnemyHealth_V2 : MonoBehaviour
     public int enemyType;
     int currentHealth;
 
+    EnemySound enemySound;
     void Start() {
 
         currentHealth = maxHealth;
         Debug.Log(gameObject.GetComponent<BoxCollider2D>().isTrigger);
+        enemySound = GetComponent<EnemySound>();
     }
 
     public void TakeDamage(int damage) {
 
         currentHealth -= damage;
+        enemySound.playTookDamage();
 
         if (currentHealth <= 0) {
 
@@ -32,7 +35,7 @@ public class EnemyHealth_V2 : MonoBehaviour
     void Die() {
 
         Debug.Log("Enemy died");
-
+        enemySound.playDeath();
         animator.SetBool("isDead", true);
         //Debug.Log(GetComponent<BoxCollider2D>().enabled);
         this.GetComponent<BoxCollider2D>().enabled = false;

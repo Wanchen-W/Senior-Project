@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private float currentEnergy;
     public Slider energyBar;
 
+    PlayerSound playerSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         transform.position = startingPosition.initialValue;
         transform.localScale = startingScale.initialValue;
         respawnPoint = transform.position;
+        playerSound = GetComponent<PlayerSound>();
 
         currentEnergy = maxEnergy;
         energyBar.maxValue = maxEnergy;
@@ -281,6 +284,7 @@ public class PlayerController : MonoBehaviour
         //energy.loseEnergy(dashEnergyConsumption);
         //peHUD.SetEnergy(energy.currentEnergy);
         //Debug.Log("Velocity Pre Dash: " + player.velocity.x);
+        playerSound.playDash();
         player.velocity = new Vector2(directionX * dashingPower, 0f);
         //Debug.Log("Velocity Mid Dash: " + player.velocity.x);
         tr.emitting = true;

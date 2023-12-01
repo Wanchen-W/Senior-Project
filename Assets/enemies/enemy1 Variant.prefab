@@ -670,6 +670,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: eba83dd7708e3654999d3f542d71e97d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3779822757317169155}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: eba83dd7708e3654999d3f542d71e97d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2953396470356210296}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: eba83dd7708e3654999d3f542d71e97d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -79070975776593702}
     - targetCorrespondingSourceObject: {fileID: -8868194330998705476, guid: eba83dd7708e3654999d3f542d71e97d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 567890458509136786}
@@ -923,6 +929,123 @@ MonoBehaviour:
   animator: {fileID: 5147088354183595250}
   maxHealth: 100
   enemyType: 1
+--- !u!82 &-2953396470356210296
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834703376178169894}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 15
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &-79070975776593702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834703376178169894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043f3b18d1e634744832e7300d8ca55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walk: {fileID: 8300000, guid: a8429409900f7cc449aac31696b92668, type: 3}
+  attack: {fileID: 8300000, guid: 22e7ebf0d52ec7244ae4c4406798d6e8, type: 3}
+  death: {fileID: 8300000, guid: 17d61fa9dcbd66b4581c7e928b79d529, type: 3}
+  tookDamage: {fileID: 0}
+  idle1: {fileID: 8300000, guid: 95d06f92fe268c941a07329231d22719, type: 3}
+  idle2: {fileID: 8300000, guid: b62adce5decc5134b82f864c795291ed, type: 3}
+  idle3: {fileID: 8300000, guid: d3dee2c96f50b9a4d9d0f187a2ba7f97, type: 3}
+  idle4: {fileID: 8300000, guid: 75c076370e7c82b469cf13776b62e475, type: 3}
+  idle5: {fileID: 8300000, guid: 8d8fc8d623a66f342bdc596b3b8dbcf2, type: 3}
 --- !u!4 &7630872665829421693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3519632515023100902, guid: eba83dd7708e3654999d3f542d71e97d, type: 3}
