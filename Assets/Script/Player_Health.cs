@@ -126,6 +126,7 @@ public class Player_Health : MonoBehaviour {
         else if (lifeLeft<=0 && fall == true)
         {
             SceneManager.LoadScene("Game Oveer");
+            return;
         }
         else if (lifeLeft >=0 && fall ==true)
         {
