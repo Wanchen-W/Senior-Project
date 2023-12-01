@@ -1411,6 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8673304416711340419}
+  hitEffectPrefab: {fileID: 0}
   maxHealth: 50
   enemyType: 2
 --- !u!82 &6169091975312131593
