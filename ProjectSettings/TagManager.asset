@@ -18,7 +18,7 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
+  - forceshield
   - 
   - 
   - 
@@ -60,4 +60,7 @@ TagManager:
     locked: 0
   - name: player obj
     uniqueID: 3655558607
+    locked: 0
+  - name: player
+    uniqueID: 2326234673
     locked: 0

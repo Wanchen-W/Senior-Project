@@ -6204,7 +6204,7 @@ MonoBehaviour:
   - {fileID: 64950527}
   fadeOverlay: {fileID: 752396666}
   fadeDuration: 2
-  speed: 200
+  speed: 30
   backgroundWidth: 780
 --- !u!4 &1714966327
 Transform:
