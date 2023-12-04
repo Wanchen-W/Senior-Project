@@ -16,6 +16,7 @@ public class Player_Health : MonoBehaviour {
     public GameObject health1;
     PlayerSound playerSound;
     public bool fall = false;
+    public ForceShieldController forceShieldController;
 
     void Start()
     {
@@ -73,32 +74,32 @@ public class Player_Health : MonoBehaviour {
        }
 
     }
-
     private void LoseHealth()
     {
+
+        if (forceShieldController != null && forceShieldController.isShieldOn)
+        {
+            Debug.Log("Player is undamageable as the shield is active");
+            return; 
+        }
         healthNumber = healthNumber - 1;
         playerSound.playTookDamage();
-        if (health3.activeInHierarchy) {
 
+        if (health3.activeInHierarchy)
+        {
             health3.SetActive(false);
-
         }
-
-        else if (health2.activeInHierarchy) {
-
+        else if (health2.activeInHierarchy)
+        {
             health2.SetActive(false);
-
-        } 
-
-        else {
-
+        }
+        else
+        {
             health1.SetActive(false);
             Respawn();
-
         }
-        
     }
-     
+
     private void GainHealth() {
         playerSound.playHealthUp();
         if (healthNumber < 3)
