@@ -17780,7 +17780,7 @@ MonoBehaviour:
   health2: {fileID: 1581017153}
   health1: {fileID: 701019962}
   fall: 0
-  forceShieldController: {fileID: 0}
+  forceShieldController: {fileID: 385958757}
 --- !u!114 &1159075525
 MonoBehaviour:
   m_ObjectHideFlags: 0
