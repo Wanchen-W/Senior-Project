@@ -60,8 +60,6 @@ public class MainMenuController : MonoBehaviour
         if (!isSettingsActive)
         {
             SetActiveCanvas(settingsCanvas);
-            // Play the unfolding animation when the settings panel is being activated
-            settingsAnimator.SetTrigger("unfold");
         }
         else
         {
