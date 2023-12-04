@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class animationController : MonoBehaviour
 {
-    public TextMeshProUGUI respawnMessage;
+    public Text respawnMessage;
+    public Health health;
     // Start is called before the first frame update
     private Animator propAnimation;
+    private string life;
     void Start()
     {
         propAnimation = GetComponent<Animator>();
@@ -18,6 +20,9 @@ public class animationController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            life =  health.lifeInital.ToString();
+            respawnMessage.text = "You reached a respawn point! You have " + life + " life.";
+            respawnMessage.color = Color.white;
             respawnMessage.gameObject.SetActive(true);
             GetComponent<Animator>().SetBool("entered", true);
         }

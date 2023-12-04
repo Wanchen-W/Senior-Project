@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NPC Event.unity
     guid: 6e6c69aec812c3a49a3455413cf96cb1
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 032e7fec1588eea4ebc2e0787783b07c
   m_configObjects: {}

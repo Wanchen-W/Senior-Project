@@ -6478,6 +6478,7 @@ GameObject:
   - component: {fileID: 1762481018}
   - component: {fileID: 1762481017}
   - component: {fileID: 1762481021}
+  - component: {fileID: 1762481022}
   m_Layer: 5
   m_Name: Button_Setting
   m_TagString: Untagged
@@ -6564,9 +6565,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1762481021}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: ToggleSettings
+      - m_Target: {fileID: 1762481022}
+        m_TargetAssemblyTypeName: LevelManagement, Assembly-CSharp
+        m_MethodName: credit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6630,6 +6631,21 @@ MonoBehaviour:
   gameOptionsCanvas: {fileID: 170080148}
   levelSelectionCanvas: {fileID: 728821217}
   settingsCanvas: {fileID: 394501819}
+--- !u!114 &1762481022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762481014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04971c01cf62ca4094832431037b1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {fileID: 11400000, guid: b73e333b1bbb5094ebab863d0238bcea, type: 2}
+  scale: {fileID: 11400000, guid: 6a2be263b8b61424f9cb65b5c45f4771, type: 2}
+  health: {fileID: 11400000, guid: 86592bfab3f54174ebc16c274f014e07, type: 2}
 --- !u!1 &1773738417
 GameObject:
   m_ObjectHideFlags: 0
@@ -6640,6 +6656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773738418}
   - component: {fileID: 1773738422}
+  - component: {fileID: 1773738423}
   - component: {fileID: 1773738421}
   - component: {fileID: 1773738420}
   - component: {fileID: 1773738419}
@@ -6728,7 +6745,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1773738421}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1773738423}
+        m_TargetAssemblyTypeName: LevelManagement, Assembly-CSharp
+        m_MethodName: credit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1773738421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6767,6 +6796,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773738417}
   m_CullTransparentMesh: 1
+--- !u!114 &1773738423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773738417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04971c01cf62ca4094832431037b1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {fileID: 11400000, guid: b73e333b1bbb5094ebab863d0238bcea, type: 2}
+  scale: {fileID: 11400000, guid: 6a2be263b8b61424f9cb65b5c45f4771, type: 2}
+  health: {fileID: 11400000, guid: 86592bfab3f54174ebc16c274f014e07, type: 2}
 --- !u!1 &1774560941
 GameObject:
   m_ObjectHideFlags: 0
