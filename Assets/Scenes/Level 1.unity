@@ -9549,7 +9549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007e122cda533374baf6d12e25ce4943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnMessage: {fileID: 813007566}
+  respawnMessage: {fileID: 0}
+  health: {fileID: 0}
 --- !u!95 &218289616
 Animator:
   serializedVersion: 5
@@ -10812,7 +10813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007e122cda533374baf6d12e25ce4943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnMessage: {fileID: 813007566}
+  respawnMessage: {fileID: 0}
+  health: {fileID: 0}
 --- !u!95 &318649779
 Animator:
   serializedVersion: 5
@@ -16550,6 +16552,7 @@ MonoBehaviour:
   health3: {fileID: 603641628}
   health2: {fileID: 1581017153}
   health1: {fileID: 701019962}
+  fall: 0
 --- !u!114 &1159075525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16562,6 +16565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6038bf1369fdd004586f15d740358f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hiteffect: {fileID: 0}
+  handTransform: {fileID: 0}
   attackCenter: {fileID: 1329357397}
   attackHitbox: 1
   enemyLayer:
@@ -18527,7 +18532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007e122cda533374baf6d12e25ce4943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnMessage: {fileID: 813007566}
+  respawnMessage: {fileID: 0}
+  health: {fileID: 0}
 --- !u!95 &1532965232
 Animator:
   serializedVersion: 5
