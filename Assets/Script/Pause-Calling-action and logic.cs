@@ -11,38 +11,25 @@ public class SettingsMenuToggle : MonoBehaviour
 
     void Start()
     {
-        SetPauseCanvasesActive(false);
-        settingsWindow.SetActive(false); 
-        Time.timeScale = 1f;
         isPaused = false;
+        //Do NOT CHANGE THE VISABILITY OF ALL UI LAYERS
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (settingsWindow.activeSelf)
+            Debug.Log("Escape pressed. Current State: " + isPaused);
+            // Toggle pause state regardless of UI elements for debugging
+            if (isPaused)
             {
-                ToggleSettingsWindow();
-                return;
-            }
-
-            if (settingsMenuCanvas.activeSelf && !settingsWindow.activeSelf)
-            {
+                Debug.Log("Resuming Game");
                 ResumeGame();
-                return;
             }
-
-            if (IsOnlyPauseCanvasActive())
+            else
             {
-                ResumeGame();
-                return;
-            }
-
-            if (!IsAnyPauseCanvasActive() && !settingsWindow.activeSelf && !settingsMenuCanvas.activeSelf)
-            {
+                Debug.Log("Pausing Game");
                 PauseGame();
-                return;
             }
         }
     }
@@ -50,37 +37,41 @@ public class SettingsMenuToggle : MonoBehaviour
     public void ToggleSettingsWindow()
     {
         settingsWindow.SetActive(!settingsWindow.activeSelf);
+        CheckGamePauseState();
+
     }
 
     public void ToggleSettingsMenuCanvas()
     {
         settingsMenuCanvas.SetActive(!settingsMenuCanvas.activeSelf);
+        CheckGamePauseState();
 
-        
-        if (settingsMenuCanvas.activeSelf)
-        {
-            PauseGame();
-        }
-        else if (IsOnlyPauseCanvasActive())
-        {
-            ResumeGame();
-        }
     }
 
     public void PauseGame()
     {
-        SetPauseCanvasesActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+      
+        if (!isPaused)
+        {
+            Debug.Log("Pausing game");
+            SetPauseCanvasesActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
     }
 
     public void ResumeGame()
     {
-        SetPauseCanvasesActive(false);
-        settingsWindow.SetActive(false); // Ensure settings window is also deactivated
-        settingsMenuCanvas.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
+
+       
+            Debug.Log("Resuming game");
+            SetPauseCanvasesActive(false);
+            settingsWindow.SetActive(false);
+            settingsMenuCanvas.SetActive(false);
+            Time.timeScale = 1f;
+            isPaused = false;
+        
+
     }
 
     public void QuitToStartMenu()
@@ -89,8 +80,9 @@ public class SettingsMenuToggle : MonoBehaviour
         SceneManager.LoadScene("UI-Starting");
     }
 
-    private void SetPauseCanvasesActive(bool isActive)
+    public void SetPauseCanvasesActive(bool isActive)
     {
+       
         foreach (GameObject canvas in pauseCanvases)
         {
             canvas.SetActive(isActive);
@@ -110,10 +102,23 @@ public class SettingsMenuToggle : MonoBehaviour
         return false;
     }
 
-    private bool IsOnlyPauseCanvasActive()
+    private bool IsAnyUIActive()
     {
-        // This checks if the only active canvas is a pause canvas and not settings or menu
-        return IsAnyPauseCanvasActive() && !settingsWindow.activeSelf && !settingsMenuCanvas.activeSelf;
+        // Check if any UI element (pause canvases, settings menu, settings window) is active
+        return IsAnyPauseCanvasActive() || settingsMenuCanvas.activeSelf || settingsWindow.activeSelf;
+    }
+
+    private void CheckGamePauseState()
+    {
+        // Adjusted logic to handle the first toggle correctly
+        if (IsAnyUIActive() && !isPaused)
+        {
+            PauseGame();
+        }
+        else if (!IsAnyUIActive() && isPaused)
+        {
+            ResumeGame();
+        }
     }
 
     public void QuitToDesktop()

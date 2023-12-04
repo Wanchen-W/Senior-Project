@@ -500,7 +500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97.3098, y: -0.8307}
+  m_AnchoredPosition: {x: 97.1, y: -1.07}
   m_SizeDelta: {x: 294.6195, y: 108.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66021903
@@ -8569,12 +8569,12 @@ MonoBehaviour:
   hiteffect: {fileID: 1133559983}
   handTransform: {fileID: 1133559962}
   attackCenter: {fileID: 1905194552}
-  attackHitbox: 1.5
+  attackHitbox: 1.3
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   attackDamage: 1
-  attackRate: 2
+  attackRate: 5
 --- !u!114 &1133559978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8595,7 +8595,7 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackRate: 2
+  attackRate: 10
   tr: {fileID: 1133559976}
   maxEnergy: 100
   energyBar: {fileID: 859045812}
@@ -10682,7 +10682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1678397038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10742,7 +10742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.9520264, y: -2.3722}
+  m_AnchoredPosition: {x: 1.9520264, y: -2.3721924}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1712849958
