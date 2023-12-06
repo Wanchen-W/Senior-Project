@@ -4676,7 +4676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53.29791, y: 143.538}
+  m_AnchoredPosition: {x: 45, y: 147}
   m_SizeDelta: {x: 682.9, y: 191.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151550935
@@ -4712,7 +4712,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A long time ago in galaxy <color=#feae34>far</color>, far away
+  m_Text: In a future similar to ours <color=#feae34>a story between</color>  robots
+    and human...
 --- !u!222 &1151550936
 CanvasRenderer:
   m_ObjectHideFlags: 0
