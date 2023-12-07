@@ -22,6 +22,13 @@ public class LevelManagement : MonoBehaviour
         SceneManager.LoadScene("Level 2");
         position.initialValue = new Vector2(-4.83f,-1.207f);
     }
+
+    public void Level1()
+    {
+        change();
+        SceneManager.LoadScene("Level 1");
+        position.initialValue = new Vector2(-5.46f, -1.3f);
+    }
     public void credit()
     {
         Debug.Log("s");
