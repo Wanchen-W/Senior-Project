@@ -17265,8 +17265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0211370e37a59458e5c2d09f83e5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Beginning-Scene
-  playerPosition: {x: 72.4, y: 0.6}
+  sceneToLoad: Level 1
+  playerPosition: {x: 269.07, y: -1.13}
   storagePosition: {fileID: 11400000, guid: b73e333b1bbb5094ebab863d0238bcea, type: 2}
   playerScale: {x: -0.2, y: 0.2}
   storageScale: {fileID: 11400000, guid: 6a2be263b8b61424f9cb65b5c45f4771, type: 2}
