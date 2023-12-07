@@ -77,6 +77,8 @@ public class SettingsMenuToggle : MonoBehaviour
     public void QuitToStartMenu()
     {
         // Load the "UI-Starting" scene
+        Time.timeScale = 1f;
+        isPaused = false;
         SceneManager.LoadScene("UI-Starting");
     }
 
