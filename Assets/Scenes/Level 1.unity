@@ -3964,9 +3964,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: {fileID: 11400000, guid: 86592bfab3f54174ebc16c274f014e07, type: 2}
-  health3: {fileID: 433854559}
+  health3: {fileID: 2018811251}
   health2: {fileID: 323573696}
-  health1: {fileID: 2018811251}
+  health1: {fileID: 433854559}
   fall: 0
   forceShieldController: {fileID: 54874298}
 --- !u!95 &433603799
