@@ -310,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 780.8, y: -6.7999496}
+  m_AnchoredPosition: {x: 780.8, y: -6.7999573}
   m_SizeDelta: {x: 871.8356, y: 557.1659}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &64950528
@@ -362,10 +362,6 @@ GameObject:
   - component: {fileID: 143812773}
   - component: {fileID: 143812775}
   - component: {fileID: 143812774}
-  - component: {fileID: 143812777}
-  - component: {fileID: 143812776}
-  - component: {fileID: 143812779}
-  - component: {fileID: 143812778}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -437,90 +433,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143812772}
   m_CullTransparentMesh: 1
---- !u!114 &143812776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143812772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 912678e1cccadff4e94e46daa03a4e89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuCanvas: {fileID: 329132776}
-  gameOptionsCanvas: {fileID: 170080148}
-  levelSelectionCanvas: {fileID: 728821217}
-  settingsCanvas: {fileID: 394501819}
---- !u!114 &143812777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143812772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 143812776}
-          m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-          m_MethodName: CloseSettings
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 143812778}
-          m_TargetAssemblyTypeName: TextClickFeedback, Assembly-CSharp
-          m_MethodName: PlayClickSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &143812778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143812772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4cc1ef8ec52a354781b90869d5e7ec6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickSound: {fileID: 8300000, guid: 087224dd7ec352f42a3b950a07009a88, type: 3}
---- !u!114 &143812779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143812772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eaff685f7644a64ba8792b440bd13be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickedScale: {x: 0.082065, y: 0.13, z: 1}
-  feedbackDuration: 0.1
 --- !u!1 &170080148
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +689,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A long time ago in galaxy <color=#feae34>far</color>, far away
+  m_Text: In a future similar to ours <color=#feae34>a story between</color>  robots
+    and human...
 --- !u!222 &240292378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2386,7 +2299,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1430300463}
         m_TargetAssemblyTypeName: LevelManagement, Assembly-CSharp
-        m_MethodName: Level
+        m_MethodName: Level2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3628,7 +3541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -3.2000122, y: -7.0772324}
+  m_AnchoredPosition: {x: -3.200012, y: -7.07724}
   m_SizeDelta: {x: 871.8356, y: 557.1659}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &848216726
@@ -8251,7 +8164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -3.2000122, y: -7.0772324}
+  m_AnchoredPosition: {x: -3.200012, y: -7.07724}
   m_SizeDelta: {x: 871.8356, y: 557.1659}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2013877311
