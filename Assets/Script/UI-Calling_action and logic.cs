@@ -67,6 +67,12 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
+    public void CloseSettings()
+    {
+        SetActiveCanvas(mainMenuCanvas);
+    }
+
+
     private void SetActiveCanvas(GameObject canvasToActivate)
     {
         mainMenuCanvas.SetActive(false);

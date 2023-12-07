@@ -17,11 +17,20 @@ public class LevelManagement : MonoBehaviour
         SceneManager.LoadScene("Beginning-Scene");
         position.initialValue = new Vector2(-5.57f,0.17f);
     }
-    public void Level() {
+    public void Level2() {
         change();
         SceneManager.LoadScene("Level 2");
         position.initialValue = new Vector2(-4.83f,-1.207f);
     }
+
+    public void Level1()
+    {
+        change();
+        SceneManager.LoadScene("Level 1");
+        position.initialValue = new Vector2(-5.846f, -1.13f);
+    }
+
+
     public void credit()
     {
         Debug.Log("s");
