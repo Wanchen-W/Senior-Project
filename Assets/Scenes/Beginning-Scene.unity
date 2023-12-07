@@ -10221,6 +10221,8 @@ GameObject:
   - component: {fileID: 1539422037}
   - component: {fileID: 1539422036}
   - component: {fileID: 1539422035}
+  - component: {fileID: 1539422041}
+  - component: {fileID: 1539422040}
   m_Layer: 5
   m_Name: Text_Audio
   m_TagString: Untagged
@@ -10316,6 +10318,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1539422040}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: ToggleMute
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1539422038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10358,6 +10372,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539422033}
   m_CullTransparentMesh: 1
+--- !u!114 &1539422040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539422033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8390fee29f4b68498b156c55349a2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1539422041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539422033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76034c34d5e5b6e46b71b77ccb9c5afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvases:
+  - {fileID: 624447485}
+  - {fileID: 1104915985}
+  settingsWindow: {fileID: 1678397037}
+  settingsMenuCanvas: {fileID: 418885733}
 --- !u!1 &1564030246
 GameObject:
   m_ObjectHideFlags: 0
